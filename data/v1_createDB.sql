@@ -1,26 +1,26 @@
 -- TODO 1.3a : Créer les tables manquantes et modifier celles ci-dessous
 
-CREATE TABLE LesDisciplines
+CREATE TABLE Disciplines
 (
   numDi NUMBER(4),
   nomDi VARCHAR2(25),
   CONSTRAINT DI_PK PRIMARY KEY (numDi)
 );
 
-CREATE TABLE LesParticipants
+CREATE TABLE Participants
 (
   numPA NUMBER(4),
   CONSTRAINT PA_PK PRIMARY KEY (numPA)
 );
 
-CREATE TABLE LesEquipes
+CREATE TABLE Equipes_base
 (
   numPA NUMBER(4),
   CONSTRAINT EQ_PK PRIMARY KEY (numPA),
   CONSTRAINT EQ_FK_PA FOREIGN KEY (numPA) REFERENCES LesParticipants(numPA)
 );
 
-CREATE TABLE LesSportifsEQ
+CREATE TABLE Sportifs_base
 (
   numPA NUMBER(4),
   nomSp VARCHAR2(20),
@@ -38,7 +38,7 @@ CREATE TABLE LesSportifsEQ
 );
 
 
-CREATE TABLE LesEpreuves
+CREATE TABLE Epreuves
 (
   numEp NUMBER(4),
   nomEp VARCHAR2(20),
@@ -67,8 +67,18 @@ CREATE TABLE Participe
 
 );
 
-
 -- TODO 1.4a : ajouter la définition de la vue LesAgesSportifs
+
+CREATE VIEW Sportifs AS
+SELECT numPa, nomSp, prenomSp, pays, categorieSp, dateNaisSp, numEq, cast(strftime('%Y.%m%d', 'now') - strftime('%Y.%m%d', dateNaisSp) as int) as age
+FROM Sportifs_base;
+
 -- TODO 1.5a : ajouter la définition de la vue LesNbsEquipiers
+
+CREATE VIEW Equipes AS
+SELECT numEq, count(*) as nbEquipiers
+FROM Sportifs_base 
+GROUP BY numEq;
+
 -- TODO 3.3 : ajouter les éléments nécessaires pour créer le trigger (attention, syntaxe SQLite différent qu'Oracle)
 
