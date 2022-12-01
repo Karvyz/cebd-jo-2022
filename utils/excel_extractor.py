@@ -51,7 +51,7 @@ def read_excel_file_V1(data:sqlite3.Connection, file):
     cursor = data.cursor()
     for ix, row in df_sportifs.iterrows():
         try:
-            query = "insert into LesSportifsEQ values ({},'{}','{}','{}','{}','{}',{})".format(
+            query = "insert into Sportifs_base values ({},'{}','{}','{}','{}','{}',{})".format(
                 row['numSp'], row['nomSp'], row['prenomSp'], row['pays'], row['categorieSp'], row['dateNaisSp'],
                 row['numEq'])
             # On affiche la requête pour comprendre la construction. A enlever une fois compris.
@@ -67,7 +67,7 @@ def read_excel_file_V1(data:sqlite3.Connection, file):
     cursor = data.cursor()
     for ix, row in df_epreuves.iterrows():
         try:
-            query = "insert into LesEpreuves values ({},'{}','{}','{}','{}',{},".format(
+            query = "insert into Epreuves values ({},'{}','{}','{}','{}',{},".format(
                 row['numEp'], row['nomEp'], row['formeEp'], row['nomDi'], row['categorieEp'], row['nbSportifsEp'])
 
             if (row['dateEp'] != 'null'):
