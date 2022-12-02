@@ -937,7 +937,7 @@
      <x>0</x>
      <y>0</y>
      <width>710</width>
-     <height>21</height>
+     <height>18</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFiles">
@@ -1044,8 +1044,8 @@
    <slot>open_fct_fournie_1()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>506</x>
-     <y>297</y>
+     <x>502</x>
+     <y>306</y>
     </hint>
     <hint type="destinationlabel">
      <x>79</x>
@@ -1060,8 +1060,8 @@
    <slot>open_fct_fournie_2()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>531</x>
-     <y>335</y>
+     <x>530</x>
+     <y>346</y>
     </hint>
     <hint type="destinationlabel">
      <x>116</x>
@@ -1140,8 +1140,8 @@
    <slot>open_fct_comp_1()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>577</x>
-     <y>419</y>
+     <x>574</x>
+     <y>425</y>
     </hint>
     <hint type="destinationlabel">
      <x>686</x>
@@ -1156,8 +1156,8 @@
    <slot>open_fct_comp_2()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>571</x>
-     <y>457</y>
+     <x>568</x>
+     <y>466</y>
     </hint>
     <hint type="destinationlabel">
      <x>662</x>
@@ -1181,6 +1181,54 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pushButton_2_1</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>open_age()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>516</x>
+     <y>642</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>611</x>
+     <y>636</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_3_1</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>open_inscription()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>451</x>
+     <y>751</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>532</x>
+     <y>745</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_3_2</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>open_resultats()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>376</x>
+     <y>786</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>576</x>
+     <y>794</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>createDBV0()</slot>
@@ -1196,5 +1244,8 @@
   <slot>insertDBV1()</slot>
   <slot>openDataV1()</slot>
   <slot>createTriggersDBV1()</slot>
+  <slot>open_age()</slot>
+  <slot>open_inscription()</slot>
+  <slot>open_resultats()</slot>
  </slots>
 </ui>
