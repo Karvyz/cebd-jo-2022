@@ -8,4 +8,4 @@ DROP TABLE IF EXISTS Sportifs_base;
 DROP TABLE IF EXISTS Equipes_base;
 DROP TABLE IF EXISTS Participants;
 -- TODO 3.3 : pensez à détruire vos triggers !
-DROP TRIGGER EX-AEQUO ON Participe CASCADE;
+DROP TRIGGER IF EXISTS EXAEQUO;
