@@ -13,6 +13,7 @@ from actions.v0_action_fct_fournie_2_partie_0 import AppFctFournie2Partie0
 from actions.v0_action_fct_comp_1_partie_1 import AppFctComp1Partie1
 from actions.v0_action_fct_comp_2_partie_1 import AppFctComp2Partie1
 from actions.v1_action_inscription import AppInscription
+from actions.v1_action_resultats import AppResults
 
 # Classe utilisée pour lancer la fenêtre principale de l'application et définir ses actions
 class AppWindow(QMainWindow):
@@ -31,6 +32,7 @@ class AppWindow(QMainWindow):
     fct_comp_1_dialog = None
     fct_comp_2_dialog = None
     fct_inscription = None
+    fct_resultats = None
 
     # Constructeur
     def __init__(self):
@@ -238,6 +240,12 @@ class AppWindow(QMainWindow):
             self.fct_inscription.close()
         self.fct_inscription = AppInscription(self.data)
         self.fct_inscription.show()
+    
+    def open_resultats(self):
+        if self.fct_resultats is not None:
+            self.fct_resultats.close()
+        self.fct_resultats = AppResults(self.data)
+        self.fct_resultats.show()
 
     ####################################################################################################################
     # Fonctions liées aux évènements (signal/slot/event)
