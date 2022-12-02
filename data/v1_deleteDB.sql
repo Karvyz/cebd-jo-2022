@@ -1,9 +1,11 @@
 -- TODO 1.3a : Détruire les tables manquantes et modifier celles ci-dessous
-DROP TABLE IF EXISTS Participe;
-DROP TABLE IF EXISTS LesEpreuves;
-DROP TABLE IF EXISTS LesSportifsEQ;
-DROP TABLE IF EXISTS LesEquipes;
-DROP TABLE IF EXISTS LesParticipants;
-DROP TABLE IF EXISTS LesDisciplines;
+DROP VIEW IF EXISTS Sportifs;
+DROP VIEW IF EXISTS Equipes;
+
+DROP TABLE IF EXISTS Inscriptions;
+DROP TABLE IF EXISTS Epreuves;
+DROP TABLE IF EXISTS Sportifs_base;
+DROP TABLE IF EXISTS Equipes_base;
+DROP TABLE IF EXISTS Participants;
 -- TODO 3.3 : pensez à détruire vos triggers !
 DROP TRIGGER EX-AEQUO ON Participe CASCADE;

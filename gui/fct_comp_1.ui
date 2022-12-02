@@ -24,7 +24,29 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit_fct_comp_1"/>
+      <widget class="QComboBox" name="comboBox">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <item>
+        <property name="text">
+         <string>masculin</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>feminin</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>mixte</string>
+        </property>
+       </item>
+      </widget>
      </item>
      <item>
       <widget class="QPushButton" name="valider_fct_comp_1">

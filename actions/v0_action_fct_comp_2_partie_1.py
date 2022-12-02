@@ -13,23 +13,33 @@ class AppFctComp2Partie1(QDialog):
         super(QDialog, self).__init__()
         self.ui = uic.loadUi("gui/fct_comp_2.ui", self)
         self.data = data
+        try:
+            cursor = self.data.cursor()
+            result = cursor.execute("SELECT DISTINCT categorieEp FROM Epreuves")
+            self.ui.comboBox.clear()
+            for row in result:
+                self.ui.comboBox.addItem(row[0])
+        except Exception as e:
+            self.ui.table_fct_comp_2.setRowCount(0)
+            display.refreshLabel(self.ui.label_fct_comp_2, "Impossible d'afficher les catégories : " + repr(e))
 
     # Fonction de mise à jour de l'affichage
     def refreshResult(self):
         # TODO 1.2 : fonction à modifier pour remplacer la zone de saisie par une liste de valeurs issues de la BD une
         #  fois le fichier ui correspondant mis à jour
+
         display.refreshLabel(self.ui.label_fct_comp_2, "")
-        if not self.ui.lineEdit_fct_comp_2.text().strip():
+        if not self.ui.comboBox.currentText().strip():
             self.ui.table_fct_comp_2.setRowCount(0)
             display.refreshLabel(self.ui.label_fct_comp_2, "Veuillez indiquer un nom de catégorie")
         else:
             try:
                 cursor = self.data.cursor()
                 result = cursor.execute(
-                    "SELECT numEp, nomEp, formeEp, nomDi, categorieEp, nbSportifsEp, strftime('%Y-%m-%d',dateEp,'unixepoch') FROM LesEpreuves WHERE categorieEp = ?",
-                    [self.ui.lineEdit_fct_comp_2.text().strip()])
+                    "SELECT numEp, nomEp, formeEp, nomDi, categorieEp, nbSportifsEp, strftime('%Y-%m-%d',dateEp,'unixepoch') FROM Epreuves WHERE categorieEp = ?",
+                    [self.ui.comboBox.currentText().strip()])
             except Exception as e:
-                self.ui.table_fct_comp_3.setRowCount(0)
+                self.ui.table_fct_comp_2.setRowCount(0)
                 display.refreshLabel(self.ui.label_fct_comp_2, "Impossible d'afficher les résultats : " + repr(e))
             else:
                 i = display.refreshGenericData(self.ui.table_fct_comp_2, result)
