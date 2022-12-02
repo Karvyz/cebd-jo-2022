@@ -38,8 +38,8 @@ class AppTablesDataV1(QDialog):
     @pyqtSlot()
     def refreshAllTablesV1(self):
 
-        self.refreshTable(self.ui.label_epreuves, self.ui.tableEpreuves, "SELECT numEp, nomEp, formeEp, nomDi, categorieEp, nbSportifsEp, dateEp FROM LesEpreuves")
-        self.refreshTable(self.ui.label_sportifs, self.ui.tableSportifs, "SELECT numSp, nomSp, prenomSp, pays, categorieSp, dateNaisSp, numEq FROM LesSportifsEQ")
+        self.refreshTable(self.ui.label_epreuves, self.ui.tableEpreuves, "SELECT numEp, nomEp, formeEp, nomDi, categorieEp, nbSportifsEp, dateEp FROM Epreuves")
+        self.refreshTable(self.ui.label_sportifs, self.ui.tableSportifs, "SELECT numPa, nomSp, prenomSp, pays, categorieSp, dateNaisSp, numEq, age, nbEquipiers FROM Sportifs LEFT JOIN Equipes USING(numEq)")
 
         # TODO 1.3 : modifier pour afficher les nouveaux éléments (il faut aussi changer le fichier .ui correspondant)
         # TODO 1.4b : ajouter l'affichage des éléments de la vue LesAgesSportifs après l'avoir créée

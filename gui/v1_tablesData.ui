@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>968</width>
+    <width>1056</width>
     <height>600</height>
    </rect>
   </property>
@@ -199,7 +199,7 @@
          </attribute>
          <column>
           <property name="text">
-           <string>numSp</string>
+           <string>numPa</string>
           </property>
          </column>
          <column>
@@ -230,6 +230,16 @@
          <column>
           <property name="text">
            <string>numEq</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>age</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>nbEquipiers</string>
           </property>
          </column>
         </widget>
