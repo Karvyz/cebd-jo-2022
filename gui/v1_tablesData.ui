@@ -29,7 +29,7 @@
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>1</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="tabEpreuves">
       <attribute name="title">
@@ -178,6 +178,42 @@
        </item>
       </layout>
      </widget>
+     <widget class="QWidget" name="tabInscriptions">
+      <attribute name="title">
+       <string>LesInscriptions</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <widget class="QTableWidget" name="tableInscriptions">
+         <column>
+          <property name="text">
+           <string>numPa</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>numEp</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>medaille</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="labelInscriptions">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
      <widget class="QWidget" name="tabSportifs">
       <attribute name="title">
        <string>LesSportifs</string>
@@ -283,6 +319,37 @@
            </disabled>
           </palette>
          </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabEquipes">
+      <attribute name="title">
+       <string>LesEquipes</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QTableWidget" name="tableEquipes">
+         <column>
+          <property name="text">
+           <string>numEq</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>nbSportifs</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="labelEquipes">
          <property name="text">
           <string/>
          </property>
