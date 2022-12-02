@@ -40,6 +40,10 @@ class AppTablesDataV1(QDialog):
 
         self.refreshTable(self.ui.label_epreuves, self.ui.tableEpreuves, "SELECT numEp, nomEp, formeEp, nomDi, categorieEp, nbSportifsEp, dateEp FROM Epreuves")
         self.refreshTable(self.ui.label_sportifs, self.ui.tableSportifs, "SELECT numPa, nomSp, prenomSp, pays, categorieSp, dateNaisSp, numEq, age, nbEquipiers FROM Sportifs LEFT JOIN Equipes USING(numEq)")
+        self.refreshTable(self.ui.labelEquipes, self.ui.tableEquipes, "SELECT numEq, nbEquipiers FROM Equipes")
+        self.refreshTable(self.ui.labelInscriptions, self.ui.tableInscriptions, "SELECT numPA, numEp, medaille FROM Inscriptions")
+
+        # la table Participants ne contient que des numeros (sportifs + equipes)
 
         # TODO 1.3 : modifier pour afficher les nouveaux éléments (il faut aussi changer le fichier .ui correspondant)
         # TODO 1.4b : ajouter l'affichage des éléments de la vue LesAgesSportifs après l'avoir créée
