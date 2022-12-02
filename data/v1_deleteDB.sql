@@ -6,3 +6,4 @@ DROP TABLE IF EXISTS LesEquipes;
 DROP TABLE IF EXISTS LesParticipants;
 DROP TABLE IF EXISTS LesDisciplines;
 -- TODO 3.3 : pensez à détruire vos triggers !
+DROP TRIGGER EX-AEQUO ON Participe CASCADE;
